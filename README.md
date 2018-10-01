@@ -4,46 +4,33 @@
 Yahoo Weather widget for HABpanel (Openhab).
 
 ## Download
-**The widget and images**: [weather-underground.widget.json](https://github.com/BasvanH/habpanel-widget-weatherunderground)
+**The widget and images**: [yahoo-weather.widget.json](https://github.com/BasvanH/habpanel-widget-weatherunderground)
 
-**Weather Underground icons**: [weather-underground-icons](https://www.npmjs.com/package/weather-underground-icons)
+**Yahoo Weather icons**: [weather-icons](https://github.com/erikflowers/weather-icons)
 
 ## Installation
-- Install the [Weather Underground](https://docs.openhab.org/addons/bindings/weatherunderground/readme.html) binding via PaperUI.
-- Configure the Thing: Local Weather (You can set your preferred language).
-- If you havent done already, change your locality of Openhab in Paperui / Configuration / System / Regional Settings and restart Openhab and clear your browsers cache. This way the Widget will follow te locallity with transforming the dates.
+- Install the [Weather](https://www.openhab.org/addons/bindings/weather1/) binding via PaperUI.
+- Replace the Item list in /etc/openhab2/items: yourweather.items 
 - Import the downloaded widget to your HABpanel.
-- Download weather-underground-icons repository from [here](https://github.com/manifestinteractive/weather-underground-icons).
-- The 'weather-underground-icons' folder should be stored in your '/conf/html/' folder.
-- Set the 'ServerPath' variable in the widget to '/static/weather-underground-icons-master/dist' (default).
-- Place the three .png images in your '/conf/html/weather-underground-icons/dist/images' folder.
+- Download weather-icons repository from [here](https://github.com/erikflowers/weather-icons).
+- The 'weather-underground-icons' folder should be stored in your '/etc/openhab2/html/' folder.
+- Set the 'ServerPath' variable in the widget to '/static/weather-icons' (default).
+- Place the three .png images in your '/conf/html/weather-icons/images' folder.
 
 The complete structure would look like this:
 
 - /conf/html
-  - /weather-underground-icons
+  - /weather-icons
     - /css
-    - /js
-    - /dist
-      - wu-icons-style.css
-      - wu-icons-style.min.css
-      - /icons <= this is where the different icon theme’s are stored
-      - /images
-        - feel.png
-        - humidity.png
-        - wind.png
+	  - weather-icons.min.css
+    - /font
+    - /svg <= this is where the different icon theme’s are stored
+	- values
+	- /images
+	  - feel.png
+      - humidity.png
+      - wind.png
         
-Your ServerPath variable in the widget would look like this:
-
-<div ng-init="ServerPath='/static/weather-underground-icons-master/dist'; IconSet='white'">
-
-You can set the 'IconSet' to one of the following options:
-- black
-- solid-black
-- solid-white
-- white
-
-The location of your ‘/conf/html’ folder depends on your Openhab installation.
 
 ## Help
 If you need any help, use this [topic](https://community.openhab.org/t/weather-underground-widget-with-forecast/40260) on the Openhab community forum.

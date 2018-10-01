@@ -1,0 +1,78 @@
+{
+    "template": "<!-- Download: https://github.com/erikflowers/weather-icons -->
+<!-- And place icons somewhere in your /conf/html folder structure -->
+<div ng-init="ServerPath='/static/weather-icons-master'">
+</div>
+
+<link rel="stylesheet" type="text/css" href="{{ServerPath}}/css/weather-icons.min.css">
+ 
+<style>
+@media (min-width: 992px) {
+    .col-md-border:not(:last-child) {
+			border-right: 1px solid #d7d7d7;
+    }
+    .col-md-border + .col-md-border {
+			border-left: 1px solid #d7d7d7;
+			margin-left: -1px;
+    }
+  	.day:first-letter {
+    	text-transform: uppercase;
+		}
+  	.current-icon {
+			width: 14em !important;
+  		height: 14em !important;
+  		margin-top: -1em;
+		}
+  	.condition {
+  		height: 2em;
+ 		}
+}
+</style>
+
+<div id="container">
+  <div class="row">
+  	<div class="col-md-5">
+      <h2 class="text-left"><b>Renfrew</b></h2>
+      <h2 class="text-left">{{itemValue('Condition')}}</h2>
+    </div>
+    <div class="col-md-4 text-left">
+      <i class="wi wi-yahoo-{{itemValue('Condition_ID')}}" style="font-size: 12em"></i>
+    </div>
+    <div class="col-md-3 text-right">
+      <h2 style="margin-bottom:1em;">{{'%.1f' | sprintf:itemValue('Temperature')}} °C</h2>
+      <h4><img style="height:16px;" src="{{ServerPath}}/images/humidity.png"/> {{itemValue('Humidity')}} %</h5>
+      <h4><img style="height:16px;" src="{{ServerPath}}/images/wind.png"/> {{itemValue('Wind_Speed')}} km/h</h5>
+      <h4><img style="height:16px;" src="{{ServerPath}}/images/feel.png"/> {{itemValue('Temp_Feel')}} °C</h5>
+   	</div>
+  </div>
+	<div class="row" style="margin-top: 1em;">
+		<div class="col-md-3 col-md-border">
+      <h4 class="day">{{itemValue('ObservationTime0') | date:'EEEE'}}</h4>
+      <i class="wi wi-yahoo-{{itemValue('Condition_ID0')}}" style="font-size: 3em"></i>
+      <h5 class="condition">{{itemValue('Condition0')}}</h5>
+      <h4><b>{{'%.0f' | sprintf:itemValue('Temp_Max0')}}</b> / {{'%.0f' | sprintf:itemValue('Temp_Min0')}} °C</h4>
+    </div>
+    <div class="col-md-3 col-md-border">
+      <h4 class="day">{{itemValue('ObservationTime1') | date:'EEEE'}}</h4>
+      <i class="wi wi-yahoo-{{itemValue('Condition_ID1')}}" style="font-size: 3em"></i>
+      <h5 class="condition">{{itemValue('Condition1')}}</h5>
+			<h4><b>{{'%.0f' | sprintf:itemValue('Temp_Max1')}}</b> / {{'%.0f' | sprintf:itemValue('Temp_Min1')}} °C</h4>
+    </div>
+    <div class="col-md-3 col-md-border">
+      <h4 class="day">{{itemValue('ObservationTime2') | date:'EEEE'}}</h4>
+      <i class="wi wi-yahoo-{{itemValue('Condition_ID2')}}" style="font-size: 3em"></i>
+      <h5 class="condition">{{itemValue('Condition2')}}</h5>
+      <h4><b>{{'%.0f' | sprintf:itemValue('Temp_Max2')}}</b> / {{'%.0f' | sprintf:itemValue('Temp_Min2')}} °C</h4>
+    </div>
+    <div class="col-md-3 col-md-border">
+      <h4 class="day">{{itemValue('ObservationTime3') | date:'EEEE'}}</h4>
+      <i class="wi wi-yahoo-{{itemValue('Condition_ID3')}}" style="font-size: 3em"></i>
+      <h5 class="condition">{{itemValue('Condition3')}}</h5>
+      <h4><b>{{'%.0f' | sprintf:itemValue('Temp_Max3')}}</b> / {{'%.0f' | sprintf:itemValue('Temp_Min3')}} °C</h4>
+    </div>
+	</div>
+</div>",
+    "name": "Yahoo Weather",
+    "author": "Dito Cahya",
+    "description": "Local Weather, use with Weather binding"
+}
