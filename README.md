@@ -4,7 +4,7 @@
 Yahoo Weather widget for HABpanel (Openhab).
 
 ## Download
-**The widget and images**: [yahoo-weather.widget.json](https://github.com/BasvanH/habpanel-widget-weatherunderground)
+**The widget and images**: [yahoo-weather.widget.json](https://github.com/ditoec/habpanel-widget-yahooweather)
 
 **Yahoo Weather icons**: [weather-icons](https://github.com/erikflowers/weather-icons)
 
@@ -19,20 +19,20 @@ Yahoo Weather widget for HABpanel (Openhab).
 
 The complete structure would look like this:
 
-- /conf/html
+- /etc/openhab2/html
   - /weather-icons
     - /css
-	  - weather-icons.min.css
+	- weather-icons.min.css
     - /font
     - /svg <= this is where the different icon theme’s are stored
 	- values
 	- /images
 	  - feel.png
-      - humidity.png
-      - wind.png
+      	  - humidity.png
+      	  - wind.png
         
 
 ## Help
 If you need any help, use this [topic](https://community.openhab.org/t/weather-underground-widget-with-forecast/40260) on the Openhab community forum.
 
-For issues and feature requests, please use the [Issues module](https://github.com/BasvanH/habpanel-widget-weatherunderground/issues) on Github.
+For issues and feature requests, please use the [Issues module](https://github.com/ditoec/habpanel-widget-yahooweather/issues) on Github.
